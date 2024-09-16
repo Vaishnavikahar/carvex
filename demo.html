@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carvex Logistics</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #228B22; /* Teal background */
+            color: #fff; /* White text */
+        }
+
+        header {
+            padding: 20px;
+            background-color: #fff; /* White header */
+            color: #228B22; /* Teal text */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #228B22;
+        }
+
+        .hero {
+            background-image: url("https://i.imgur.com/hZ7c52Q.png"); /* Image background */
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .services {
+            padding: 50px;
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        .services h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .service-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .cta-button {
+            background-color: #228B22;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #196F3D;
+        }
+
+        .solutions {
+            padding: 50px;
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        .solutions h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .solution-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .solution-card img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .solution-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .solution-card p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .efficiency {
+            padding: 50px;
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        .efficiency h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .efficiency-card {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .efficiency-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .efficiency-card p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        .vehicles {
+            padding: 50px;
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        .vehicles h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .vehicles-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .vehicles-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .vehicles-text {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .vehicles-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .vehicles-buttons button {
+            background-color: #228B22;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+        .vehicles-buttons button:hover {
+            background-color: #196F3D;
+        }
+
+        .faq {
+            padding: 50px;
+            background-color: #fff;
+            color: #228B22;
+        }
+
+        .faq h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .faq-accordion {
+            margin-bottom: 20px;
+        }
+
+        .faq-accordion-header {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .faq-accordion-header h3 {
+            font-size: 18px;
+            margin: 0;
+        }
+
+        .faq-accordion-content {
+            padding: 15px;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            display: none; /* Initially hidden */
+        }
+
+        .faq-accordion-content p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        footer {
+            padding: 50px;
+            background-color: #fff;
+            color: #228B22;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #228B22;
+        }
+
+        .footer-contact {
+            margin-bottom: 20px;
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-social a {
+            margin: 0 10px;
+            color: #228B22;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .services .service-card {
+                margin-bottom: 10px;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            Ccarvex
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Solutions</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><button class="cta-button">Get Started</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Most Affordable Way to Ship Products</h1>
+        <p>Whether you're traveling for business, leisure, or special occasion, our chauffeur-driven limousines.</p>
+    </section>
+
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <img src="https://i.imgur.com/w76dQ64.png" alt="Ocean Freight">
+            <h3>Ocean Freight</h3>
+        </div>
+        <div class="service-card">
+            <img src="https://i.imgur.com/N4vS2hE.png" alt="Air Freight">
+            <h3>Air Freight</h3>
+        </div>
+        <div class="service-card">
+            <img src="https://i.imgur.com/hF2mQ04.png" alt="Land Express">
+            <h3>Land Express</h3>
+        </div>
+    </section>
+
+    <section class="solutions">
+        <h2>End-to-End Logistics & Management Solutions</h2>
+        <p>So that you can easily and rapidly manage inventory and orders from anywhere.</p>
+        <div class="solution-card">
+            <img src="https://i.imgur.com/662X42P.png" alt="Quality">
+            <h3>Quality</h3>
+            <p>Get it done the way you wanted, only better. Our software helps you pick the right Logistics solutions</p>
+        </div>
+        <div class="solution-card">
+            <img src="https://i.imgur.com/C7u040S.png" alt="Benefits">
+            <h3>Benefits</h3>
+            <p>Close all the gaps in your supply chain. We provide unmatched cargo visibility and accessibility.</p>
+        </div>
+    </section>
+
+    <section class="transport-logistic">
+        <h2>Transport Logistic Solutions</h2>
+        <p>In an industry where every company has some sort of proprietary technology, we're proud to lead the pack. Our software is the most powerful solution</p>
+        <button class="cta-button">Get Started</button>
+    </section>
+
+    <section class="companies">
+        <h2>Big Companies That Have Partnered With Us</h2>
+        <div class="company-card">
+            <img src="https://i.imgur.com/Z0n4Q91.png" alt="Hill-Rom">
+        </div>
+        <div class="company-card">
+            <img src="https://i.imgur.com/xZ147z1.png" alt="Hickory Hill">
+        </div>
+        <div class="company-card">
+            <img src="https://i.imgur.com/3F224m5.png" alt="Admiral">
+        </div>
+        <div class="company-card">
+            <img src="https://i.imgur.com/9G1K782.png" alt="Coors">
+        </div>
+    </section>
+
+    <section class="efficiency">
+        <h2>We Work Flow Emphasizes Efficiency</h2>
+        <div class="efficiency-card">
+            <h3>#1 Precision in Delivery</h3>
+            <p>Our commitment to precision ensures that your cargo arrive on time every time</p>
+        </div>
+        <div class="efficiency-card">
+            <h3>#2 Tailored Solutions Every Time</h3>
+            <p>Our customers centric approach means personalized solutions for your unique cargo needs</p>
+        </div>
+        <div class="efficiency-card">
+            <h3>#3 Cutting Edge & Technology</h3>
+            <p>Our advanced tracking system provides real time visibility into your shipment, ensuring you're in control</p>
+        </div>
+    </section>
+
+    <section class="vehicles">
+        <h2>Shipping Vehicles With The Best Advantages In The Industry</h2>
+        <p>Logistic in the World</p>
+        <div class="vehicles-image">
+            <img src="https://i.imgur.com/U0b0H3J.png" alt="Shipping Vehicles">
+        </div>
+        <div class="vehicles-text">
+            <h3>All Your Logistic Needs Are In One Application</h3>
+        </div>
+        <div class="vehicles-buttons">
+            <button>GET IT ON<br>Google Play</button>
+            <button>Download on the<br>App Store</button>
+        </div>
+    </section>
+
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-accordion">
+            <div class="faq-accordion-header">
+                <h3>What types of cargo does carves handle?</h3>
+            </div>
+            <div class="faq-accordion-content">
+                <p>To begin, assess your budget and preferences. Research neighborhoods and listings that match your needs. Once you find a property, work with an agent to make an offer.</p>
+            </div>
+        </div>
+        <div class="faq-accordion">
+            <div class="faq-accordion-header">
+                <h3>How can I track my shipment with carves?</h3>
+            </div>
+            <div class="faq-accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="faq-accordion">
+            <div class="faq-accordion-header">
+                <h3>Does carves offer international shipping services?</h3>
+            </div>
+            <div class="faq-accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div class="faq-accordion">
+            <div class="faq-accordion-header">
+                <h3>How secure are Carves warehouse facilities?</h3>
+            </div>
+            <div class="faq-accordion-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <ul>
+                <li><h3>Company</h3></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul>
+                <li><h3>Services</h3></li>
+                <li><a href="#">Worldwide Shipping</a></li>
+                <li><a href="#">Sea Shipping</a></li>
+                <li><a href="#">Ground Shipping</a></li>
+            </ul>
+            <ul>
+                <li><h3>Shipping</h3></li>
+                <li><a href="#">Track Packages</a></li>
+                <li><a href="#">Calculate Fare</a></li>
+            </ul>
+            <ul>
+                <li><h3>Support</h3></li>
+                <li><a href="#">Customer Care</a></li>
+                <li><a href="#">Insurance Claim</a></li>
+            </ul>
+            <ul>
+                <li><h3>News</h3></li>
+                <li><a href="#">Press Release</a></li>
+                <li><a href="#">Our Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <p>Ccarvex</p>
+            <p>Copyright© 2024 All right reserved</p>
+        </div>
+        <div class="footer-contact">
+            <p>4725 thornibirge, Vir, Syracuse
+Connectiut 4926</p>
+        </div>
+        <div class="footer-contact">
+            <p>contact@carvex.com
+03 5833 59 4432</p>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        <div class="footer-button">
+            <button class="cta-button">Got a Logistic Serive?</button>
+            <button class="cta-button">Contact Us</button>
+        </div>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Use</a>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Functionality
+        const accordionHeaders = document.querySelectorAll('.faq-accordion-header');
+
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const content = header.nextElementSibling;
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
